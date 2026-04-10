@@ -1,0 +1,3 @@
+norm_id=Unix "process"=sshd-sessions action=Failed object=password
+| chart count() as failure_count by device_ip,user, source_address
+| search failure_count > 10

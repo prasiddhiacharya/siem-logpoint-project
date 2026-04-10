@@ -1,0 +1,5 @@
+device_ip=192.168.0.92 source_address=* -("source_address"="192.168.0.92")
+-("source_address"="192.168.0.9")
+| chart count() as cnt by source_address
+| search cnt > 500
+
